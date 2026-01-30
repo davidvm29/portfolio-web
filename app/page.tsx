@@ -76,14 +76,8 @@ export default function Home() {
       {/* SOBRE MÍ (OPCIONAL, MUY PRO) */}
       <section className="mt-14 rounded-2xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur">
         <h2 className="text-lg font-semibold">Sobre mí</h2>
-<<<<<<< HEAD
-        <p className="mt-2 text-sm text-neutral-600">
-          Especializado en ciberseguridad, análisis de datos e IoT. Me gusta construir
-          proyectos con foco en rendimiento, buenas prácticas y claridad técnica.
-=======
         <p className="mt-2 max-w-2xl text-sm text-neutral-600">
-         Ingeniero de software apasionado por el mundo de los datos y las nuevas tecnologías. Me defino como una persona con muchas ganas de aprender, crecer profesionalmente y aportar valor real.
->>>>>>> d1f3008 (Styles changed v2)
+         Ingeniero de software apasionado por el mundo de los datos y las nuevas tecnologías. Me defino como una persona con muchas ganas de aprender, crecer profesionalmente y aportar valor.
         </p>
       </section>
     </main>
