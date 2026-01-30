@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "analisis-virustotal-android",
+    "title": "Análisis de malware Android con VirusTotal",
+    "summary": "Exploración, limpieza y visualización; consultas avanzadas en MongoDB.",
+    "tags": ["Python", "MongoDB", "Pandas", "Matplotlib"],
+    "date": "2025-05-16",
+    "links": {
+      "github": "https://github.com/tuusuario/tu-repo",
+      "demo": ""
+    }
+  },
+  {
+    "slug": "iot-parking-azure",
+    "title": "IoT: Ocupación de parkings a Azure IoT Hub",
+    "summary": "ETL desde datos abiertos, publicación a IoT Hub y almacenamiento en Cosmos DB.",
+    "tags": ["Python", "Azure IoT Hub", "Cosmos DB"],
+    "date": "2025-04-24",
+    "links": {
+      "github": "https://github.com/tuusuario/tu-repo",
+      "demo": ""
+    }
+  }
+]
