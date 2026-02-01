@@ -7,6 +7,10 @@ export type Project = {
   tags: string[];
   date: string;
   links: { github?: string; demo?: string };
+  /** Optional "mini case-study" fields */
+  problem?: string;
+  solution?: string;
+  impact?: string[];
 };
 
 export function getAllProjects(): Project[] {

@@ -3,17 +3,29 @@
     "slug": "analisis-virustotal-android",
     "title": "Análisis de malware Android con VirusTotal",
     "summary": "Exploración, limpieza y visualización; consultas avanzadas en MongoDB.",
+    "problem": "Un dataset grande y heterogéneo dificulta sacar métricas accionables (países, familias, engines, reputación).",
+    "solution": "Pipeline en Python para limpiar/normalizar JSON, enriquecer países y generar agregaciones en MongoDB (find/aggregate) con visualizaciones.",
+    "impact": [
+      "KPIs y gráficos por país, engines y reputación",
+      "Consultas agregadas y propuesta de índices para acelerar exploración"
+    ],
     "tags": ["Python", "MongoDB", "Pandas", "Matplotlib"],
     "date": "2025-05-16",
     "links": {
       "github": "https://github.com/tuusuario/tu-repo",
-      "demo": ""
+      "demo": "https://www.bing.com/search?pglt=297&q=hola&cvid=00ab1dd0cdfb4703a34d3cbe4ded7c53&gs_lcrp=EgRlZGdlKgYIABBFGDsyBggAEEUYOzIGCAEQLhhAMgYIAhAAGEAyBggDEC4YQDIGCAQQLhhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAFGEDSAQg0NTc5ajBqMagCALACAA&FORM=ANNTA1&PC=ASTS"
     }
   },
   {
     "slug": "iot-parking-azure",
     "title": "IoT: Ocupación de parkings a Azure IoT Hub",
     "summary": "ETL desde datos abiertos, publicación a IoT Hub y almacenamiento en Cosmos DB.",
+    "problem": "Necesidad de monitorizar ocupación de parkings públicos en tiempo real y almacenar histórico consultable.",
+    "solution": "Ingesta desde datos abiertos, transformación a JSON, envío periódico configurable a Azure IoT Hub y persistencia en Cosmos DB.",
+    "impact": [
+      "Telemetría periódica y filtrado por parking",
+      "Base para dashboards/alertas sobre ocupación"
+    ],
     "tags": ["Python", "Azure IoT Hub", "Cosmos DB"],
     "date": "2025-04-24",
     "links": {
