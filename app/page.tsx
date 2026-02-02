@@ -5,6 +5,7 @@ import { ProjectCard } from "@/app/components/ProjectCard";
 
 export default function Home() {
   const projects = getAllProjects().slice(0, 3);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -21,95 +22,73 @@ export default function Home() {
     <main className="mx-auto max-w-4xl px-6 py-12">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
       {/* HEADER */}
-<header id="top" className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-between">
-  {/* Bloque foto + texto */}
-  <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:gap-6 sm:text-left">
-    {/* FOTO */}
-    <div className="relative h-24 w-24 overflow-hidden rounded-3xl border border-neutral-200 bg-white dark:bg-neutral-900/60 dark:backdrop-blur shadow-md sm:h-32 sm:w-32">
-      <Image
-        src="/me.jpg"
-        alt="Foto de perfil"
-        fill
-        sizes="(max-width: 640px) 96px, 128px"
-        className="object-cover object-[50%_20%]"
-        priority
-      />
-    </div>
+      <header
+        id="top"
+        className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:gap-6 sm:text-left">
+          {/* FOTO */}
+          <div className="relative h-24 w-24 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-md dark:bg-neutral-900/60 dark:backdrop-blur sm:h-32 sm:w-32">
+            <Image
+              src="/me.jpg"
+              alt="Foto de perfil"
+              fill
+              sizes="(max-width: 640px) 96px, 128px"
+              className="object-cover object-[50%_20%]"
+              priority
+            />
+          </div>
 
-    {/* TEXTO */}
-    <div className="space-y-2">
-      <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-        David Villén Moreno
-      </h2>
-      <p className="max-w-xl text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
-        Ingeniero Informático | Software & Data Science | Python · Data Analysis · Machine Learning · Big Data
-      </p>
+          {/* TEXTO */}
+          <div className="space-y-2">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              David Villén Moreno
+            </h1>
 
-      {/* CTA */}
-      {/* <div className="flex flex-wrap justify-center gap-3 pt-2 sm:justify-start">
-        <Link
-          href="#projects"
-          className="rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-neutral-800"
-        >
-          Ver proyectos
-        </Link>
-        <a
-          href="/cv.pdf"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-900 shadow-sm hover:border-neutral-400"
-        >
-          Descargar CV
-        </a>
-        <Link
-          href="#contact"
-          className="rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-900 shadow-sm hover:border-neutral-400"
-        >
-          Contacto
-        </Link>
-      </div> */}
+            <p className="max-w-xl text-sm text-neutral-600 dark:text-neutral-300 sm:text-base">
+              Ingeniero Informático · Software & Data Engineering · Python · SQL · Machine Learning · Big Data
+            </p>
 
-      {/* LINKS */}
-      <div className="flex flex-wrap justify-center gap-4 pt-1 text-sm sm:justify-start">
-        <Link href="/projects" className="underline underline-offset-4">
-          Proyectos
-        </Link>
+            {/* LINKS */}
+            <div className="flex flex-wrap justify-center gap-4 pt-1 text-sm sm:justify-start">
+              <Link href="/projects" className="underline underline-offset-4">
+                Proyectos
+              </Link>
 
-        <a
-          href="https://github.com/davidvm29"
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-4"
-        >
-          GitHub
-        </a>
+              <a
+                href="https://github.com/davidvm29"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4"
+              >
+                GitHub
+              </a>
 
-        <a
-          href="https://www.linkedin.com/in/david-villen-moreno-a4a835176/"
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-4"
-        >
-          LinkedIn
-        </a>
+              <a
+                href="https://www.linkedin.com/in/david-villen-moreno-a4a835176/"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4"
+              >
+                LinkedIn
+              </a>
 
-        <a
-          href="/cv.pdf"
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-4"
-        >
-          CV
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4"
+              >
+                CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* PROYECTOS */}
       <section id="projects" className="mt-12">
@@ -129,122 +108,113 @@ export default function Home() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="mt-14 border-t border-neutral-200 dark:border-white/10 pt-8">
+      <section
+        id="skills"
+        className="mt-14 border-t border-neutral-200 pt-8 dark:border-white/10"
+      >
         <h2 className="text-lg font-semibold">Skills</h2>
         <p className="mt-2 max-w-2xl text-sm text-neutral-600 dark:text-neutral-300">
-          Tecnologías con experiencia práctica (qué he hecho con cada una).
+          Tecnologías aplicadas a proyectos.
         </p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {/* Frontend */}
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm
-                          dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
-            <h3 className="font-semibold text-neutral-900 dark:text-neutral-100">Frontend</h3>
+          <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
+            <h3 className="font-semibold">Frontend</h3>
 
-            <ul className="mt-3 space-y-3 text-sm text-neutral-700 dark:text-neutral-200">
+            <ul className="mt-3 space-y-3 text-sm">
               <li>
-                <span
-                  className="
-                    inline-block rounded-md bg-neutral-100 px-2 py-0.5 text-sm font-semibold
-                    text-neutral-900
-                    dark:bg-white/10 dark:text-neutral-100
-                  "
-                >
-                  React / Next.js
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  Vue.js
                 </span>
-
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Rutas, SSR/SSG, componentes reutilizables y performance.
+                  Desarrollo de interfaces, componentes reutilizables y mantenimiento.
                 </p>
               </li>
-              <li>
-                <span
-                  className="
-                    inline-block rounded-md bg-neutral-100 px-2 py-0.5 text-sm font-semibold
-                    text-neutral-900
-                    dark:bg-white/10 dark:text-neutral-100
-                  "
-                >
-                  React / Next.js
-                </span>
 
+              <li>
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  React / Next.js (básico)
+                </span>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Layouts claros, responsive y accesibilidad básica.
+                  Componentes, routing y buenas prácticas en proyectos personales.
+                </p>
+              </li>
+
+              <li>
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  HTML5 · CSS3 · Bootstrap
+                </span>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Layout responsive y estructura clara.
                 </p>
               </li>
             </ul>
           </div>
 
           {/* Backend */}
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm
-                          dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
-            <h3 className="font-semibold text-neutral-900 dark:text-neutral-100">Backend</h3>
+          <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
+            <h3 className="font-semibold">Backend</h3>
 
-            <ul className="mt-3 space-y-3 text-sm text-neutral-700 dark:text-neutral-200">
+            <ul className="mt-3 space-y-3 text-sm">
               <li>
-                <span
-                  className="
-                    inline-block rounded-md bg-neutral-100 px-2 py-0.5 text-sm font-semibold
-                    text-neutral-900
-                    dark:bg-white/10 dark:text-neutral-100
-                  "
-                >
-                  Python
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  PHP · CodeIgniter (MVC)
                 </span>
-
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Análisis de datos, automatización y pipelines.
+                  Desarrollo de módulos, APIs y mantenimiento de proyectos.
                 </p>
               </li>
+
               <li>
-                <span
-                  className="
-                    inline-block rounded-md bg-neutral-100 px-2 py-0.5 text-sm font-semibold
-                    text-neutral-900
-                    dark:bg-white/10 dark:text-neutral-100
-                  "
-                >
-                  Node.js
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  Python
                 </span>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  APIs, integración con BD y autenticación.
+                  Automatización, scripts y soporte a pipelines de datos.
+                </p>
+              </li>
+
+              <li>
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  SQL · JavaScript · Java
+                </span>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Lógica de negocio, consultas e integraciones.
                 </p>
               </li>
             </ul>
           </div>
 
           {/* Data / Tools */}
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm
-                          dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
-            <h3 className="font-semibold text-neutral-900 dark:text-neutral-100">Data / Tools</h3>
+          <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
+            <h3 className="font-semibold">Data · DB · Tools</h3>
 
-            <ul className="mt-3 space-y-3 text-sm text-neutral-700 dark:text-neutral-200">
+            <ul className="mt-3 space-y-3 text-sm">
               <li>
-                <span
-                  className="
-                    inline-block rounded-md bg-neutral-100 px-2 py-0.5 text-sm font-semibold
-                    text-neutral-900
-                    dark:bg-white/10 dark:text-neutral-100
-                  "
-                >
-                  Python
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  MySQL · MariaDB · Oracle
                 </span>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Modelado, consultas, agregaciones e índices.
+                  Diseño de esquemas, normalización y optimización de consultas.
                 </p>
               </li>
+
               <li>
-                <span
-                  className="
-                    inline-block rounded-md bg-neutral-100 px-2 py-0.5 text-sm font-semibold
-                    text-neutral-900
-                    dark:bg-white/10 dark:text-neutral-100
-                  "
-                >
-                  Python
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  MongoDB · InfluxDB · BigQuery · DuckDB
                 </span>
                 <p className="text-neutral-600 dark:text-neutral-300">
-                  Entornos reproducibles para desarrollo y despliegue.
+                  Agregaciones, analítica y almacenamiento orientado a datos.
+                </p>
+              </li>
+
+              <li>
+                <span className="inline-block rounded-md bg-neutral-100 px-2 py-0.5 font-semibold dark:bg-white/10">
+                  Git · Docker · CI/CD
+                </span>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Entornos reproducibles, versionado y despliegues básicos.
                 </p>
               </li>
             </ul>
@@ -252,47 +222,41 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* SOBRE MÍ */}
-      <section id="about" className="mt-14 border-t border-neutral-200 pt-8">
+      <section
+        id="about"
+        className="mt-14 border-t border-neutral-200 pt-8 dark:border-white/10"
+      >
         <h2 className="text-lg font-semibold">Sobre mí</h2>
         <p className="mt-2 max-w-2xl text-sm text-neutral-600 dark:text-neutral-300">
-          Ingeniero de software apasionado por el mundo de los datos y las nuevas tecnologías.
-          Me interesa construir productos útiles, medibles y bien diseñados: desde una API limpia
-          hasta un pipeline de datos robusto.
+          Ingeniero informático con formación en software y máster en Ingeniería Informática,
+          especializado en ingeniería de datos. Me motiva transformar datos en conocimiento útil
+          y construir soluciones bien diseñadas, eficientes y mantenibles.
         </p>
         <p className="mt-3 max-w-2xl text-sm text-neutral-600 dark:text-neutral-300">
-          Ahora mismo busco proyectos y oportunidades donde pueda aportar en desarrollo, analítica y ML.
+          Busco proyectos y oportunidades donde aportar valor real desde el primer día.
         </p>
       </section>
 
       {/* CONTACTO */}
       <section id="contact" className="mt-14 pb-2">
-        <div className="rounded-2xl border border-neutral-200 bg-white dark:bg-neutral-900/60 dark:backdrop-blur p-6 shadow-sm">
+        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-neutral-900/60 dark:backdrop-blur">
           <h2 className="text-lg font-semibold">Contacto</h2>
           <p className="mt-2 max-w-2xl text-sm text-neutral-600 dark:text-neutral-300">
-            ¿Tienes un proyecto o una oportunidad profesional?
-            Hablemos ;)
+            ¿Tienes un proyecto o una oportunidad profesional?  
+            Hablemos 😉
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3">
             <a
-              className="
-                rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm
-                hover:bg-neutral-800
-                dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200
-              "
+              className="rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
               href="mailto:dvillenmoreno@gmail.com?subject=Oportunidad%20profesional"
             >
               Enviar email
             </a>
 
             <a
-              className="
-                rounded-full border px-5 py-2.5 text-sm font-medium shadow-sm
-                border-neutral-300 bg-white text-neutral-900 hover:border-neutral-400
-                dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10
-              "
+              className="rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-900 shadow-sm hover:border-neutral-400 dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10"
               href="https://www.linkedin.com/in/david-villen-moreno-a4a835176/"
               target="_blank"
               rel="noreferrer"
