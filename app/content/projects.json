@@ -1,5 +1,41 @@
 [
   {
+    "slug": "analisis-dana-dashboard",
+    "title": "Análisis del impacto de la DANA en la Comunidad Valenciana · EDA, ETL y Dashboard interactivo",
+    "summary": "Análisis exploratorio, limpieza profunda y visualización geoespacial del impacto de la DANA sobre edificios en la Comunitad Valenciana.",
+    "problem": "Un dataset masivo y heterogéneo (más de 6.000 edificios y 200 variables) dificulta extraer métricas fiables sobre daños, urgencias e impacto territorial tras el episodio de la DANA.",
+    "solution": "Pipeline completo de EDA y ETL en Python para depurar, reducir dimensionalidad y enriquecer datos con geocodificación. Almacenamiento analítico en DuckDB y desarrollo de un dashboard interactivo con mapas, rankings y comparativas para visualizar rápidamente el impacto producido.",
+    "impact": [
+      "Reducción del dataset de 208 a las variables que realmente aportan valor",
+      "Identificación de patrones de daño por zona, antigüedad y altura de inundación",
+      "Visualización geoespacial de edificios y agregación por municipio",
+      "Dashboard interactivo con mapas, rankings y comparativas",
+      "Asistente IA (NL → SQL) implementado y probado localmente; desactivado en producción al depender de un LLM local"
+    ],
+    "tags": [
+      "Python",
+      "Pandas",
+      "EDA",
+      "ETL",
+      "Geocoding",
+      "DuckDB",
+      "Dash",
+      "GeoPandas",
+      "Data Visualization"
+    ],
+    "date": "2025-12-20",
+    "links": {
+      "github": "",
+      "demo": "https://dana-project-production.up.railway.app/"
+    },
+    "images": [
+      "/projects/dana/mapa-municipios.png",
+      "/projects/dana/puntos-edificios.png",
+      "/projects/dana/rankings.png"
+    ]
+  }
+  ,
+  {
     "slug": "analisis-virustotal-android",
     "title": "Análisis de malware Android con VirusTotal",
     "summary": "Exploración, limpieza y visualización; consultas avanzadas en MongoDB.",

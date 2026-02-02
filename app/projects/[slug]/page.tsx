@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "../../lib/projects";
@@ -16,6 +17,10 @@ export async function generateMetadata({
     title: project.title,
     description: project.summary,
   };
+}
+
+function cx(...classes: Array<string | false | undefined>) {
+  return classes.filter(Boolean).join(" ");
 }
 
 function InfoBlock({
@@ -46,6 +51,68 @@ function InfoBlock({
   );
 }
 
+/**
+ * Galería responsive:
+ * - Grid responsive
+ * - Cada item con aspect-[16/9] para que todas queden uniformes
+ * - object-cover para recortar bonito
+ * - Click abre la imagen en nueva pestaña (simple, sin modal)
+ */
+function ImageGallery({ images }: { images: string[] }) {
+  if (!images || images.length === 0) return null;
+
+  return (
+    <section className="mt-8">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-900 dark:text-neutral-100">
+          Capturas relevantes
+        </h2>
+        <p className="text-xs text-neutral-500 dark:text-neutral-400">
+          (haz click para ampliar)
+        </p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        {images.map((src, idx) => (
+          <a
+            key={`${src}-${idx}`}
+            href={src}
+            target="_blank"
+            rel="noreferrer"
+            className={cx(
+              "group block overflow-hidden rounded-2xl",
+              "border border-neutral-200 bg-white/60 shadow-sm",
+              "dark:border-white/10 dark:bg-white/5",
+              "transition",
+              "hover:shadow-lg"
+            )}
+          >
+            <div className="relative w-full aspect-[16/9]">
+              <Image
+                src={src}
+                alt={`Captura ${idx + 1}`}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
+                priority={idx === 0}
+              />
+            </div>
+
+            <div className="flex items-center justify-between gap-3 px-4 py-3">
+              <span className="text-xs font-medium text-neutral-700 dark:text-neutral-200">
+                Captura {idx + 1}
+              </span>
+              <span className="text-xs text-neutral-500 dark:text-neutral-400">
+                Ampliar ↗
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default async function ProjectDetail({
   params,
 }: {
@@ -55,6 +122,10 @@ export default async function ProjectDetail({
 
   const project = getProjectBySlug(slug);
   if (!project) return notFound();
+
+  // ✅ Si añades images al JSON (recommended)
+  // Ej: images: ["/projects/dana/mapa.png", "/projects/dana/rankings.png"]
+  const images: string[] = (project as any).images ?? [];
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
@@ -138,6 +209,9 @@ export default async function ProjectDetail({
             </Link>
           </div>
         </header>
+
+        {/* ✅ GALERÍA (responsive) */}
+        <ImageGallery images={images} />
 
         {/* DIVIDER */}
         <div className="my-7 h-px bg-neutral-200 dark:bg-white/10" />
