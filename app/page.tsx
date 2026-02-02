@@ -89,7 +89,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/tuusuario"
+          href="https://www.linkedin.com/in/david-villen-moreno-a4a835176/"
           target="_blank"
           rel="noreferrer"
           className="underline underline-offset-4"

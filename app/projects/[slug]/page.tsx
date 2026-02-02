@@ -51,19 +51,53 @@ function InfoBlock({
   );
 }
 
-/**
- * Galería responsive:
- * - Grid responsive
- * - Cada item con aspect-[16/9] para que todas queden uniformes
- * - object-cover para recortar bonito
- * - Click abre la imagen en nueva pestaña (simple, sin modal)
- */
+function DemoLinks({
+  demo,
+}: {
+  demo:
+    | string
+    | { label: string; url: string }[]
+    | undefined
+    | null;
+}) {
+  if (!demo) return null;
+
+  const baseBtn =
+    "rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-sm " +
+    "text-neutral-800 hover:bg-neutral-100 " +
+    "dark:border-white/10 dark:bg-white/5 dark:text-neutral-200 dark:hover:bg-white/10";
+
+  if (typeof demo === "string") {
+    return (
+      <a href={demo} target="_blank" rel="noreferrer" className={baseBtn}>
+        Ver demo ↗
+      </a>
+    );
+  }
+
+  return (
+    <>
+      {demo.map((d) => (
+        <a
+          key={d.url}
+          href={d.url}
+          target="_blank"
+          rel="noreferrer"
+          className={baseBtn}
+        >
+          {d.label} ↗
+        </a>
+      ))}
+    </>
+  );
+}
+
 function ImageGallery({ images }: { images: string[] }) {
   if (!images || images.length === 0) return null;
 
   return (
     <section className="mt-8">
-      <div className="mb-3 flex items-center justify-between gap-3">
+      <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-900 dark:text-neutral-100">
           Capturas relevantes
         </h2>
@@ -83,16 +117,16 @@ function ImageGallery({ images }: { images: string[] }) {
               "group block overflow-hidden rounded-2xl",
               "border border-neutral-200 bg-white/60 shadow-sm",
               "dark:border-white/10 dark:bg-white/5",
-              "transition",
-              "hover:shadow-lg"
+              "transition hover:shadow-lg"
             )}
           >
-            <div className="relative w-full aspect-[16/9]">
+            {/* Contenedor con ratio fijo */}
+            <div className="relative aspect-[16/9] w-full bg-neutral-100 dark:bg-white/5">
               <Image
                 src={src}
                 alt={`Captura ${idx + 1}`}
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
                 priority={idx === 0}
               />
@@ -109,6 +143,10 @@ function ImageGallery({ images }: { images: string[] }) {
           </a>
         ))}
       </div>
+
+      {/* Tip útil */}
+      <p className="mt-3 text-xs text-neutral-500 dark:text-neutral-400">
+      </p>
     </section>
   );
 }
@@ -123,9 +161,13 @@ export default async function ProjectDetail({
   const project = getProjectBySlug(slug);
   if (!project) return notFound();
 
-  // ✅ Si añades images al JSON (recommended)
-  // Ej: images: ["/projects/dana/mapa.png", "/projects/dana/rankings.png"]
   const images: string[] = (project as any).images ?? [];
+
+  // demo soporta string o array
+  const demo = (project as any)?.links?.demo as
+    | string
+    | { label: string; url: string }[]
+    | undefined;
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
@@ -182,20 +224,8 @@ export default async function ProjectDetail({
               </a>
             ) : null}
 
-            {project.links.demo ? (
-              <a
-                href={project.links.demo}
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-sm
-                  text-neutral-800 hover:bg-neutral-100
-                  dark:border-white/10 dark:bg-white/5 dark:text-neutral-200 dark:hover:bg-white/10
-                "
-              >
-                Ver demo ↗
-              </a>
-            ) : null}
+            {/* DEMO único o múltiple */}
+            <DemoLinks demo={demo} />
 
             <Link
               href="/projects"
@@ -210,7 +240,7 @@ export default async function ProjectDetail({
           </div>
         </header>
 
-        {/* ✅ GALERÍA (responsive) */}
+        {/* GALERÍA */}
         <ImageGallery images={images} />
 
         {/* DIVIDER */}
@@ -232,7 +262,7 @@ export default async function ProjectDetail({
             {project.impact && project.impact.length > 0 ? (
               <InfoBlock title="Impacto / Resultados">
                 <ul className="list-disc space-y-2 pl-5">
-                  {project.impact.map((x) => (
+                  {project.impact.map((x: string) => (
                     <li key={x}>{x}</li>
                   ))}
                 </ul>

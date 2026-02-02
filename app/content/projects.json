@@ -36,37 +36,36 @@
   }
   ,
   {
-    "slug": "analisis-virustotal-android",
-    "title": "Análisis de malware Android con VirusTotal",
-    "summary": "Exploración, limpieza y visualización; consultas avanzadas en MongoDB.",
-    "problem": "Un dataset grande y heterogéneo dificulta sacar métricas accionables (países, familias, engines, reputación).",
-    "solution": "Pipeline en Python para limpiar/normalizar JSON, enriquecer países y generar agregaciones en MongoDB (find/aggregate) con visualizaciones.",
-    "impact": [
-      "KPIs y gráficos por país, engines y reputación",
-      "Consultas agregadas y propuesta de índices para acelerar exploración"
-    ],
-    "tags": ["Python", "MongoDB", "Pandas", "Matplotlib"],
-    "date": "2025-05-16",
-    "links": {
-      "github": "https://github.com/tuusuario/tu-repo",
-      "demo": "https://www.bing.com/search?pglt=297&q=hola&cvid=00ab1dd0cdfb4703a34d3cbe4ded7c53&gs_lcrp=EgRlZGdlKgYIABBFGDsyBggAEEUYOzIGCAEQLhhAMgYIAhAAGEAyBggDEC4YQDIGCAQQLhhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAFGEDSAQg0NTc5ajBqMagCALACAA&FORM=ANNTA1&PC=ASTS"
-    }
-  },
-  {
-    "slug": "iot-parking-azure",
-    "title": "IoT: Ocupación de parkings a Azure IoT Hub",
-    "summary": "ETL desde datos abiertos, publicación a IoT Hub y almacenamiento en Cosmos DB.",
-    "problem": "Necesidad de monitorizar ocupación de parkings públicos en tiempo real y almacenar histórico consultable.",
-    "solution": "Ingesta desde datos abiertos, transformación a JSON, envío periódico configurable a Azure IoT Hub y persistencia en Cosmos DB.",
-    "impact": [
-      "Telemetría periódica y filtrado por parking",
-      "Base para dashboards/alertas sobre ocupación"
-    ],
-    "tags": ["Python", "Azure IoT Hub", "Cosmos DB"],
-    "date": "2025-04-24",
-    "links": {
-      "github": "https://github.com/tuusuario/tu-repo",
-      "demo": ""
-    }
+  "slug": "pfg-generadores-sitios-estaticos",
+  "title": "Proyecto Fin de Grado · Generadores de sitios estáticos: comparativa y desarrollo",
+  "summary": "Estudio comparativo y desarrollo práctico de generadores de sitios estáticos (Jekyll, Next.js y Pelican) mediante la recreación del sitio web de la Universidad de Córdoba.",
+  "problem": "Existe una gran variedad de generadores de sitios estáticos, pero poca información comparativa basada en métricas reales de desarrollo, rendimiento y mantenibilidad.",
+  "solution": "Comparativa sistemática entre Jekyll, Next.js y Pelican recreando el sitio web de la Universidad de Córdoba y evaluando métricas técnicas reales.",
+  "impact": [
+    "Comparativa real entre Jekyll, Next.js y Pelican",
+    "Aplicación de métricas de desarrollo y rendimiento",
+    "Aprendizaje de Ruby, Python y React",
+    "Despliegue de las tres versiones en GitHub Pages",
+    "Calificación final: 10/10 (Matrícula de Honor)"
+  ],
+  "tags": [
+    "Static Site Generators",
+    "Jekyll",
+    "Next.js",
+    "Pelican",
+    "Ruby",
+    "Python",
+    "React",
+    "GitHub Pages"
+  ],
+  "date": "2024-06-01",
+  "links": {
+    "github": "",
+    "demo": [
+      { "label": "Jekyll", "url": "https://davidvm29.github.io/jekyll/" },
+      { "label": "Next.js", "url": "https://davidvm29.github.io/uco-next/es" },
+      { "label": "Pelican", "url": "https://davidvm29.github.io/pelican/" }
+    ]
+  }
   }
 ]
