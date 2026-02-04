@@ -33,39 +33,71 @@
       "/projects/dana/puntos-edificios.png",
       "/projects/dana/rankings.png"
     ]
-  }
-  ,
+  },
+
   {
-  "slug": "pfg-generadores-sitios-estaticos",
-  "title": "Proyecto Fin de Grado · Generadores de sitios estáticos: comparativa y desarrollo",
-  "summary": "Estudio comparativo y desarrollo práctico de generadores de sitios estáticos (Jekyll, Next.js y Pelican) mediante la recreación del sitio web de la Universidad de Córdoba.",
-  "problem": "Existe una gran variedad de generadores de sitios estáticos, pero poca información comparativa basada en métricas reales de desarrollo, rendimiento y mantenibilidad.",
-  "solution": "Comparativa sistemática entre Jekyll, Next.js y Pelican recreando el sitio web de la Universidad de Córdoba y evaluando métricas técnicas reales.",
-  "impact": [
-    "Comparativa real entre Jekyll, Next.js y Pelican",
-    "Aplicación de métricas de desarrollo y rendimiento",
-    "Aprendizaje de Ruby, Python y React",
-    "Despliegue de las tres versiones en GitHub Pages",
-    "Calificación final: 10/10 (Matrícula de Honor)"
-  ],
-  "tags": [
-    "Static Site Generators",
-    "Jekyll",
-    "Next.js",
-    "Pelican",
-    "Ruby",
-    "Python",
-    "React",
-    "GitHub Pages"
-  ],
-  "date": "2024-06-01",
-  "links": {
-    "github": "",
-    "demo": [
-      { "label": "Jekyll", "url": "https://davidvm29.github.io/jekyll/" },
-      { "label": "Next.js", "url": "https://davidvm29.github.io/uco-next/es" },
-      { "label": "Pelican", "url": "https://davidvm29.github.io/pelican/" }
-    ]
-  }
+    "slug": "pfg-generadores-sitios-estaticos",
+    "title": "Proyecto Fin de Grado · Generadores de sitios estáticos: comparativa y desarrollo",
+    "summary": "Estudio comparativo y desarrollo práctico de generadores de sitios estáticos (Jekyll, Next.js y Pelican) mediante la recreación del sitio web de la Universidad de Córdoba.",
+    "problem": "Existe una gran variedad de generadores de sitios estáticos, pero poca información comparativa basada en métricas reales de desarrollo, rendimiento y mantenibilidad.",
+    "solution": "Comparativa sistemática entre Jekyll, Next.js y Pelican recreando el sitio web de la Universidad de Córdoba y evaluando métricas técnicas reales.",
+    "impact": [
+      "Comparativa real entre Jekyll, Next.js y Pelican",
+      "Aplicación de métricas de desarrollo y rendimiento",
+      "Aprendizaje de Ruby, Python y React",
+      "Despliegue de las tres versiones en GitHub Pages",
+      "Calificación final: 10/10 (Matrícula de Honor)"
+    ],
+    "tags": [
+      "Static Site Generators",
+      "Jekyll",
+      "Next.js",
+      "Pelican",
+      "Ruby",
+      "Python",
+      "React",
+      "GitHub Pages"
+    ],
+    "date": "2024-06-01",
+    "links": {
+      "github": "",
+      "demo": [
+        { "label": "Jekyll", "url": "https://davidvm29.github.io/jekyll/" },
+        { "label": "Next.js", "url": "https://davidvm29.github.io/uco-next/es" },
+        { "label": "Pelican", "url": "https://davidvm29.github.io/pelican/" }
+      ]
+    }
+  },
+
+  {
+    "slug": "big5-player-recommender",
+    "title": "Big 5 Player Recommender · Scouting y recomendación de futbolistas por similitud (Próximamente)",
+    "summary": "Aplicación web de scouting para identificar futbolistas con perfiles similares en las Big 5 ligas europeas mediante análisis estadístico, reducción de dimensionalidad y similitud coseno. Proyecto actualmente en desarrollo.",
+    "problem": "La comparación manual de jugadores a partir de estadísticas avanzadas es costosa y poco escalable, especialmente al analizar grandes volúmenes de futbolistas en múltiples ligas y posiciones.",
+    "solution": "Sistema de recomendación basado en estadísticas avanzadas normalizadas, reducción de dimensionalidad (PCA) y similitud coseno para identificar perfiles de juego similares. Interfaz web interactiva desarrollada en Next.js que permite filtrar por liga y posición y explorar recomendaciones de forma visual.",
+    "impact": [
+      "Comparación objetiva de futbolistas basada en métricas de rendimiento",
+      "Identificación rápida de perfiles similares para tareas de scouting",
+      "Reducción de complejidad mediante PCA manteniendo la información relevante",
+      "Interfaz web moderna orientada a analistas y scouting",
+      "Proyecto en desarrollo con despliegue público previsto"
+    ],
+    "tags": [
+      "Football Analytics",
+      "Player Similarity",
+      "PCA",
+      "Cosine Similarity",
+      "Scouting",
+      "Next.js",
+      "Data Visualization",
+      "Machine Learning"
+    ],
+    "date": "2026-03-01",
+    "status": "upcoming",
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "images": []
   }
 ]
